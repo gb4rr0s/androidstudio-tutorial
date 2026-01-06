@@ -1,2 +1,0 @@
-# androidstudio-tutorial
-aaa
